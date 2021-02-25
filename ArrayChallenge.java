@@ -1,4 +1,4 @@
-/*Calculate Average of Array Elements in Java*/
+/*Sorting an Integer and String Array*/
 import java.util.Arrays;
 import java.util.Scanner;
 public class ArrayChallenge 
