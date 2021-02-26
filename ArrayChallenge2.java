@@ -2,12 +2,11 @@
  * This program does the following:
  	- Sums values within an array (Complete)
  	- Finds a specific value within the array (Complete)
- 	- Removes an element from the array ()
+ 	- Removes an element from the array (Complete)
  	- Reverses the values of an Array ()
  	- 
  */
 import java.util.*;
-import java.util.Arrays;
 
 
 
@@ -20,7 +19,6 @@ public class ArrayChallenge2 {
 		populateArray(myArray);
 		sumArray(myArray);
 		printArray(myArray);
-		removeValue(myArray, 1);
 		if(findValue(myArray,5) != 0)
 		{
 			System.out.println("\nValue found!");
@@ -29,7 +27,10 @@ public class ArrayChallenge2 {
 		{
 			System.out.println("\nValue not Found!");
 		}
+		removeValue(myArray, 1);
+		/*Since an array can't change isn't dynamic, the size of an array doesn't change after removal*/
 		System.out.println(Arrays.toString(myArray));
+		
 	}
 	
 	//Function that sums values within an integer array
@@ -58,18 +59,12 @@ public class ArrayChallenge2 {
 		return 0; // If no value is found
 	}
 	//Removes a value from an Array
-	public static int[] removeValue(int[] array, int index)
+	public static  int[] removeValue(int[] array, int index)
 	{
-		
-		for(int i = 0; i < array.length;i++)
+		int remove = index;
+		for(int i = remove; i < array.length -1; i++)
 		{
-			if (i != index) 
-			{
-				int [] tempArray = new int[array.length - 1];
-		        System.arraycopy(array, 0, tempArray, 0, i);
-		        System.arraycopy(array, i+1, tempArray, i, array.length-i-1);
-		        return tempArray;
-		    }
+			array[i] = array[i+1];
 		}
 		return array;
 	}
