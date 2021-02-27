@@ -3,7 +3,7 @@
  	- Sums values within an array (Complete)
  	- Finds a specific value within the array (Complete)
  	- Removes an element from the array (Complete)
- 	- Reverses the values of an Array ()
+ 	- Reverses the values of an Array (Complete)
  	- 
  */
 import java.util.*;
@@ -30,6 +30,8 @@ public class ArrayChallenge2 {
 		removeValue(myArray, 1);
 		/*Since an array can't change isn't dynamic, the size of an array doesn't change after removal*/
 		System.out.println(Arrays.toString(myArray));
+		reverseArray(myArray);
+		System.out.println(Arrays.toString(myArray));
 		
 	}
 	
@@ -43,6 +45,18 @@ public class ArrayChallenge2 {
 			}
 			return sum;
 		}
+	//Function Reverses value of an array
+	public static int [] reverseArray(int[]array)
+	{
+		for(int i = 0; i < array.length/2; i++)
+		{
+			int temp = array[i];
+			array[i] = array[array.length-i-1];
+			array[array.length-i-1] = temp;
+		}
+		
+		return array;
+	}
 	//Function that finds specific value within an array
 	public static int findValue(int[]array, int value)
 	{
